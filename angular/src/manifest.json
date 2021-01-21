@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Google meet Presenter control",
+  "short_name": "Google meet Presenter control",
+  "version": "1.0.0",
+  "description": "Google meet Presenter control",
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_popup": "index.html?#/popup",
+    "default_title": "Angular Chrome Extension"
+  },
+  "options_page": "index.html?#/options",
+  "chrome_url_overrides": {
+    "newtab": "index.html?#/tab"
+  },  
+  "content_scripts": [
+    {
+      "js": ["contentPage.js"],
+      "matches": ["https://meet.google.com/*"]
+    }
+  ],
+  "background": {
+    "scripts": ["backgroundPage.js"],
+    "persistent": false
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
