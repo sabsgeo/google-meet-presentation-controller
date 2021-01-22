@@ -9,6 +9,10 @@
     "default_popup": "index.html?#/popup",
     "default_title": "Google meet Presenter control"
   },
+  "options_page": "index.html?#/options",
+  "chrome_url_overrides": {
+    "newtab": "index.html?#/tab"
+  },  
   "content_scripts": [
     {
       "js": ["contentPage.js"],

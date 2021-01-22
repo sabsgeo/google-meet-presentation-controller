@@ -1,7 +1,6 @@
-<h1>Popup</h1>
-<p>You can easily send messages from the popup to the content page with the provided Tab ID!
-  (tabId=<strong>{{ tabId }}</strong>)</p>
-
-<button (click)="onClick()">Click me to test</button>
-
-<p><strong>{{ message }}</strong></p>
+<h1 *ngIf="isMeetLink">On a google meet page</h1>
+<h1 *ngIf="!isMeetLink">Not on a google meet tab go to google meet tab to connect to server</h1>
+<div>
+  <button *ngIf="!isConnectedToServer" (click)="connectToServer()">Connect to server</button>
+  <button *ngIf="isConnectedToServer" (click)="disconnectFromServer()">Disconnect from server</button>
+</div>
